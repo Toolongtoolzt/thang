@@ -1,0 +1,192 @@
+* {
+   box-sizing: border-box;
+   margin: 0px;
+   padding: 0px;
+}
+
+body {
+   margin: 0;
+   font-family: 'Montserrat', sans-serif;
+   background-color:grey;
+   
+}
+
+.main {
+   width: 100%;
+}
+
+
+/*----------------------------------------------*/
+ /* navigation section */
+ 
+ .navigation {
+   display: flex;
+   justify-content: space-evenly;
+   background-color: #000000;
+}
+
+
+
+.navigation a {
+   display: block;
+   text-decoration: none;
+   font-family: "Baloo 2", sans-serif;
+   font-size: 25px;
+   text-transform: uppercase;
+   padding: 12px;
+   background-color: #ffffff00;
+   color: rgb(255, 255, 255);
+   transition: 0.5s;
+}
+
+.navigation a:hover {
+   background-color: #6868689d;
+   color: #ffffff;
+}
+
+/******* SLIDER *******/
+
+.slider {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   padding: 50px;
+}
+
+/******* SLIDER IMAGES *******/
+
+.image_container {
+   width: 600px;
+   height: 400px;
+   overflow: hidden;
+}
+
+.image_inner {
+   width: 3000px;
+   height: 400px;
+   display: flex;
+   transition: 1s;
+   transition-timing-function: cubic-bezier(.92, -0.01, .08, 1.01);
+
+}
+
+.car {
+   width: 600px;
+   height: 400px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+}
+
+/******* SLIDER BUTTONS *******/
+.button_container {
+   display: flex;
+   padding: 20px;
+   color: rgb(136, 135, 135);
+}
+
+.year {
+   width: 60px;
+   height: 40px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 10px;
+   text-align: center;
+}
+
+.year:hover {
+   transform: scale(1.2);
+   font-weight: 400;
+   cursor: pointer;
+   color: white;
+   background-color: black;
+}
+
+.active-button {
+   transform: scale(1.2);
+   font-weight: 400;
+   color: white;
+   background-color: black;
+}
+
+
+
+/******* SLIDER TEXT *******/
+
+.text_container {
+   width: 800px;
+   color: white;
+}
+
+.title {
+   font-weight: 700;
+   font-size: 36px;
+   text-align: center;
+   padding: 10px;
+}
+
+.description {
+   font-weight: 400;
+   font-size: 18px;
+   text-align: center;
+   padding: 10px;
+}
+
+.info {
+   font-weight: 400;
+   font-size: 16px;
+   font-style: italic;
+   text-align: center;
+   padding: 10px;
+}
+
+#car1,
+#car2,
+#car3 {
+   position: absolute;
+   width: 300px;
+   transform: rotate(-40deg);
+}
+
+.car1:hover {
+   width: 340px;
+   cursor: pointer;
+}
+.car2:hover {
+   width: 340px;
+   cursor: pointer;
+}
+.car3:hover {
+   width: 340px;
+   cursor: pointer;
+}
+.car4:hover {
+   width: 340px;
+   cursor: pointer;
+}
+.car5:hover {
+   width: 340px;
+   cursor: pointer;
+}
+
+
+
+
+/*---------------------*/
+/*-------Footer-------*/
+
+.footer {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   background-color: lightyellow;
+   height: 600px;
+}
+
+
