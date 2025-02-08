@@ -37,7 +37,7 @@ body {
   line-height: 80px;
   font-weight: 800;
   text-transform: uppercase;
-  background: url(/mask.jpg) 0% 40% / cover no-repeat;
+  background: url(mask.jpg) 0% 40% / cover no-repeat;
   letter-spacing: 2rem;
   text-shadow: 0px 0px 10px -1 rgb(252, 198, 0);
   color: #b0f1ff;
