@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Smooch+Sans:wght@100..900&family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+:root {
+  --container-width: 600px; /* Used for the clip-path logic in JS */
+  --vw: 100px; /* Will be updated by JS if needed */
+  --vh: 120px;
+    --dark: #000000;  /* or your preferred dark color */
+    --light: #ffffff; /* or your preferred light color */
+  
+  
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #000000;
+}
+
+/* Locomotive container: we set a large height so there's scroll space */
+#smooth-wrapper {
+  height: 400vh; /* Enough space to see the pinned effect */
+  width: 100%;
+  position: relative;
+}
+.hero-1{
+  font-size: 6vw;
+  line-height: 80px;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: url(/Project-2/aset/mask.jpg) 0% 40% / cover no-repeat;
+  letter-spacing: 2rem;
+  text-shadow: 0px 0px 10px -1 rgb(252, 198, 0);
+  color: #b0f1ff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Poppins", serif;
+}
+
+/* Navigation Bar */
+.navbar {
+  width: 100%;
+  height: 6vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.nav-link {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  position: fixed;
+  animation: entrance-2 2s cubic-bezier(0.23, 1, 0.2, 1) ;
+}
+@keyframes entrance-2 {
+  0% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.nav-link li {
+  list-style: none;
+}
+.nav-link a {
+  text-decoration: none;
+  color: white;
+  font-family: "Teko", sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px
+}
+
+a:hover{
+  color: rgba(0, 255, 234, 0.779);
+  border-bottom:rgba(233, 148, 13, 0.779) 1px solid;
+}
+.social{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: flex;
+  gap: px;
+}
+.social a img {
+  width: 25px;
+  height: 25px;
+}
+
+/* Main container, hero, content */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.logo{
+  font-size: calc(1rem + 1vw);
+  padding: 2.5%;
+position: absolute;
+left: 0;
+  color: rgba(233, 148, 13, 0.779);
+  animation: entrance 1s cubic-bezier(0.23, 1, 0.2, 1) ;
+  display: flex;
+  font-family: "Space Grotesk", serif;
+  font-optical-sizing: auto;
+}
+
+@keyframes entrance {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.section-hero{
+    width: 100%;
+    height: 90vh;  
+}
+
+/* Hero Section */
+.hero {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin-top: 10%;
+}
+.hero-content{
+  width: 100%;
+  height: 100%;
+
+}
+.sub2-container{
+  font-size: calc(1rem + 0.5vw);
+  display: flex;
+  margin-top: 15%;
+}
+
+
+
+
+/* Extra container for second video block */
+.container-2 {
+  width: 100%;
+  height: 900%;
+}
+
+/* Additional video styling */
+.vid-1 {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  border: 4px solid white;
+}
+.content-2 {
+  width: 100%;
+  height: 800vh;
+}
+
+/* Expandable Video Block: 
+   This is the pinned "figure" with dynamic clip-path */
+.video-block {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+}
+.video-block__container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; /* important for clip-path animation */
+}
+figure.video {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+figure.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Caption  */
+figure.video .video__caption span {
+  display: inline-block;
+  transform: translateY(100%);
+  font-size: 1.5rem;
+  transition: transform 0.5s ease;
+}
+
+figure.video .video__caption {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+.caption-mid {
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  top: 50%;
+  transform: translate(-50%, -50%) translateY(100%);
+  /* Larger font if desired */
+  font-size: 2rem;
+  white-space: nowrap;
+}
+
+figure.video .video__caption span {
+  display: inline-block;
+  transform: translateY(100%);
+  font-size: 1.5rem;
+}
+
+
+.content-3{
+display: absolute;
+  background-color: aquamarine;
+  width: 100%;
+  background-color: aquamarine;
+  height: 100vh;
+}
+
+.video__caption .mid {
+  font-weight: bold; /* Optional: makes it bold */
+  text-shadow: #000000 0px 0px 20px; /* Optional: adds a shadow */
+  opacity:0;
+  width: "100%";
+  font-size: 40px;
+  mix-blend-mode:difference;
+}
+
+.text{
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 10%;
+  position: absolute;
+  right: 4%;
+  top: 35%;
+  text-align: right;
+
+}
+.text2{
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 10%;
+  position: absolute;
+  left: 4%;
+  top: 25%;
+  text-align: left;
+}
+.text2 , .text{
+  width: 15vw;
+  opacity: 0;
+}
+
+.section-end{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fullpage{
+  width: 40vw;
+  
+}
+.box-container{
+  display: inline-flex;
+  padding: 40px;
+  gap: 24px;
+}
+.heading{
+  width: 100%;
+  height: 24%;
+  font-size: 2rem;
+}
+.subheading{
+  width: 60%;
+  height: 24%;
+  font-size: 1.5rem;
+
+}
+
+.end{
+  position: absolute;
+  bottom: 2%;
+  align-self: center;
+  justify-self: center;
+}
