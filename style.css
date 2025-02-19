@@ -157,11 +157,11 @@ body {
 
 /* MAIN HERO HEADLINE: Smooch Sans */
 .hero-1 {
-  font-size: 15vw;
+  font-size: 12vw;
   font-weight: 800;
   text-transform: uppercase;
   background: url("mask.jpg") 0% 45% / cover no-repeat;
-  letter-spacing: 1rem;
+  letter-spacing: 2rem;
   text-shadow: 0px 0px 10px -1px rgb(252, 198, 0);
   color: #db8814;
   -webkit-background-clip: text;
