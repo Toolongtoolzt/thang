@@ -1,52 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Smooch+Sans:wght@100..900&family=Teko:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
-@media screen and (min-width: 970px) {
+/* ------------------------------------ */
+/*  IMPORT FONTS                        */
+/* ------------------------------------ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Smooch+Sans:wght@100..900&family=Teko:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
 
-
+/* ------------------------------------ */
+/*  ROOT VARIABLES                      */
+/* ------------------------------------ */
 :root {
-  --container-width: 600px; /* Used for the clip-path logic in JS */
-  --vw: 100px; /* Will be updated by JS if needed */
+  --container-width: 600px;
+  --vw: 100px;
   --vh: 120px;
-  --dark: #000000;  /* or your preferred dark color */
-  --light: #ffffff; /* or your preferred light color */
+  --dark: #000000;
+  --light: #ffffff;
 }
 
+/* ------------------------------------ */
+/*  GLOBAL RESET & BASE                 */
+/* ------------------------------------ */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   color: white;
 }
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  background-color: #000000;
+  background-color: rgb(11, 11, 23);
+  /* Body text default to Poppins */
+  font-family: "Poppins", sans-serif;
 }
 
-/* Locomotive container: we set a large height so there's scroll space */
-#smooth-wrapper {
-  height: 400vh; /* Enough space to see the pinned effect */
-  width: 100%;
-  position: relative;
-}
-.hero-1{
-  font-size: 6vw;
-  line-height: 80px;
-  font-weight: 800;
-  text-transform: uppercase;
-  background: url(mask.jpg) 0% 40% / cover no-repeat;
-  letter-spacing: 2rem;
-  text-shadow: 0px 0px 10px -1 rgb(252, 198, 0);
-  color: #b0f1ff;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: "Poppins", serif;
-}
-
-/* Navigation Bar */
+/* ------------------------------------ */
+/*  NAVIGATION                          */
+/* ------------------------------------ */
 .navbar {
   width: 100%;
   height: 6vw;
@@ -57,66 +49,17 @@ body {
   top: 0;
   left: 0;
 }
-.nav-link {
-  display: flex;
-  gap: 50px;
-  list-style: none;
-  position: fixed;
-  animation: entrance-2 2s cubic-bezier(0.23, 1, 0.2, 1) ;
-}
-@keyframes entrance-2 {
-  0% {
-    transform: translateY(-200%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-.nav-link li {
-  list-style: none;
-}
-.nav-link a {
-  text-decoration: none;
-  color: white;
-  font-family: "Teko", sans-serif;
-  font-size: 22px;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 2px
-}
 
-a:hover{
-  color: rgba(0, 255, 234, 0.779);
-  border-bottom:rgba(233, 148, 13, 0.779) 1px solid;
-}
-.social{
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  display: flex;
-  gap: px;
-}
-.social a img {
-  width: 25px;
-  height: 25px;
-}
-
-/* Main container, hero, content */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.logo{
+/* LOGO: Smooch Sans for a unique branding style */
+.logo {
   font-size: calc(1rem + 1vw);
   padding: 2.5%;
-position: absolute;
-left: 0;
+  position: absolute;
+  left: 0;
   color: rgba(233, 148, 13, 0.779);
-  animation: entrance 1s cubic-bezier(0.23, 1, 0.2, 1) ;
+  animation: entrance 1s cubic-bezier(0.23, 1, 0.2, 1);
   display: flex;
-  font-family: "Space Grotesk", serif;
+  font-family: "Smooch Sans", sans-serif;
   font-optical-sizing: auto;
 }
 
@@ -128,67 +71,180 @@ left: 0;
     transform: translateY(0);
   }
 }
-.section-hero{
-    width: 100%;
-    height: 90vh;  
+
+/* NAV LINKS: Keep Teko, as originally used */
+.nav-link {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  position: fixed;
+  animation: entrance-2 2s cubic-bezier(0.23, 1, 0.2, 1);
+  padding: 3%;
 }
 
-/* Hero Section */
-.hero {
+@keyframes entrance-2 {
+  0% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.nav-link li {
+  list-style: none;
+}
+
+.nav-link a {
+  text-decoration: none;
+  color: white;
+  font-family: "Teko", sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.nav-link a:hover {
+  color: rgba(0, 255, 234, 0.779);
+  border-bottom: rgba(233, 148, 13, 0.779) 1px solid;
+}
+
+.social {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: flex;
+  gap: 8px;
+}
+
+/* ------------------------------------ */
+/*  SECTION LAYOUTS                     */
+/* ------------------------------------ */
+.section-hero,
+.section-mid,
+.section-end {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(11, 11, 23);
+}
+
+.section-mid {
+  height: 220vh;
+}
+
+.section-video {
+  height: 270vh;
+  background-color: rgb(11, 11, 23);
+}
+
+/* ------------------------------------ */
+/*  HERO SECTION                        */
+/* ------------------------------------ */
+.section-hero {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   text-align: center;
-  margin-top: 10%;
 }
-.hero-content{
-  width: 100%;
-  height: 100%;
 
+.hero-content {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
-.sub2-container{
+
+.hero {
+  height: 40vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+/* MAIN HERO HEADLINE: Smooch Sans */
+.hero-1 {
+  font-size: 10vw;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: url("/Project-2/aset/mask3.jpg") 0% 45% / cover no-repeat;
+  letter-spacing: 1rem;
+  text-shadow: 0px 0px 10px -1px rgb(252, 198, 0);
+  color: #db8814;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Smooch Sans", sans-serif;
+}
+
+.sub2-container {
   font-size: calc(1rem + 0.5vw);
   display: flex;
-  margin-top: 15%;
+  justify-content: center;
+  align-items: center;
+  /* Poppins as fallback */
+  font-family: "Poppins", sans-serif;
 }
 
-
-
-
-/* Extra container for second video block */
+/* ------------------------------------ */
+/*  VIDEO SECTION                       */
+/* ------------------------------------ */
 .container-2 {
   width: 100%;
   height: 900%;
 }
 
-/* Additional video styling */
 .vid-1 {
   width: 100%;
   display: block;
   margin: 0 auto;
   border: 4px solid white;
 }
+
 .content-2 {
   width: 100%;
-  height: 800vh;
+  height: 100vh;
 }
 
-/* Expandable Video Block: 
-   This is the pinned "figure" with dynamic clip-path */
 .video-block {
   width: 100vw;
   min-height: 100vh;
   position: relative;
 }
+
 .video-block__container {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden; /* important for clip-path animation */
 }
+
+.text,
+.text2 {
+  font-size: 1vw;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  opacity: 0;
+}
+
+.text {
+  text-align: right;
+  margin-top: 20%;
+  position: absolute;
+  right: 4%;
+  top: 15%;
+  width: 15vw;
+}
+
+.text2 {
+  margin-top: 10%;
+  position: absolute;
+  left: 4%;
+  text-align: left;
+  width: 15vw;
+}
+
 figure.video {
   width: 100%;
   height: 100%;
@@ -198,21 +254,15 @@ figure.video {
   align-items: center;
   justify-content: center;
 }
-figure.video {
+
+figure.video video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Caption  */
-figure.video .video__caption span {
-  display: inline-block;
-  transform: translateY(100%);
-  font-size: 1.5rem;
-  transition: transform 0.5s ease;
-}
-
-figure.video .video__caption {
+/* Caption: stays with Poppins */
+.video__caption {
   position: absolute;
   left: 24px;
   bottom: 24px;
@@ -221,106 +271,251 @@ figure.video .video__caption {
   overflow: hidden;
 }
 
+.video__caption span {
+  display: inline-block;
+  transform: translateY(100%);
+  font-size: 1.5rem;
+  transition: transform 0.5s ease;
+}
+
 .caption-mid {
   position: absolute;
-  justify-self: center;
-  align-self: center;
   top: 50%;
   transform: translate(-50%, -50%) translateY(100%);
-  /* Larger font if desired */
   font-size: 2rem;
   white-space: nowrap;
 }
 
-figure.video .video__caption span {
-  display: inline-block;
-  transform: translateY(100%);
-  font-size: 1.5rem;
-}
-
-
-.content-3{
-display: absolute;
-  background-color: aquamarine;
-  width: 100%;
-  background-color: aquamarine;
-  height: 100vh;
-}
-
 .video__caption .mid {
-  font-weight: bold; /* Optional: makes it bold */
-  text-shadow: #000000 0px 0px 20px; /* Optional: adds a shadow */
-  opacity:0;
-  width: "100%";
-  font-size: 40px;
-  mix-blend-mode:difference;
-}
-
-.text{
-  font-size: 2rem;
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  text-align: center;
-  margin-top: 10%;
-  position: absolute;
-  right: 4%;
-  top: 35%;
-  text-align: right;
-
-}
-.text2{
-  font-size: 2rem;
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  text-align: center;
-  margin-top: 10%;
-  position: absolute;
-  left: 4%;
-  top: 25%;
-  text-align: left;
-}
-.text2 , .text{
-  width: 15vw;
+  font-weight: bold;
+  text-shadow: #000000 0px 0px 20px;
   opacity: 0;
+  font-size: 40px;
+  mix-blend-mode: difference;
+  transform: translateX(-50%);
 }
 
-.section-end{
+/* ------------------------------------ */
+/*  SECTION MID                         */
+/* ------------------------------------ */
+.left-h1 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: bolder;
+  opacity: 0;
+  transition: opacity 3s;
+  font-family: "Poppins", sans-serif;
+}
+.left-h1.appear {
+  opacity: 1;
+}
+
+.section-mid {
+  background-color: #0b0b17; /* matches your dark theme */
+}
+
+/* MID CARDS WRAPPER */
+.mid-cards {
   width: 100%;
-  height: 100vh;
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 0 20px;
+}
+
+/* SINGLE CARD */
+.mid-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  background-color: #141421;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.3);
+}
+
+/* CARD MEDIA */
+.card-media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  object-fit: cover;
+  transform: perspective(75em) rotateX(10deg);
+  box-shadow:
+    rgba(30, 117, 194, 0.42) 0px 60px 123px -25px,
+    rgba(233, 234, 234, 0.08) 0px 35px 75px -35px;
+  border-radius: 10px;
+  border: 2px solid rgb(184, 194, 204);
+  filter: grayscale(200%);
+  transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+.mid-card:hover .card-media {
+  filter: grayscale(0%);
+  transform: perspective(75em) rotateX(0deg);
+  transition: all 0.3s ease-in-out;
+}
+.mid-card:hover .card-video {
+  transform: scale(1.2);
+}
+
+/* CARD VIDEO */
+.card-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* CARD CONTENT */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+.card-tag {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* USE SPACE GROTESK FOR CARD HEADINGS */
+.card-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Paragraph text = Poppins */
+.card-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  font-family: "Poppins", sans-serif;
+}
+
+/* RESPONSIVE TWEAKS */
+@media (max-width: 768px) {
+  .mid-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+  .card-content {
+    align-items: center;
+  }
+}
+
+/* ------------------------------------ */
+/*  SECTION END                         */
+/* ------------------------------------ */
+.section-end {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.fullpage{
-  width: 40vw;
-  
-}
-.box-container{
-  display: inline-flex;
-  padding: 40px;
-  gap: 24px;
-}
-.heading{
-  width: 100%;
-  height: 24%;
-  font-size: 2rem;
-}
-.subheading{
-  width: 60%;
-  height: 24%;
-  font-size: 1.5rem;
-
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #0b0b17, #23233e);
+  text-align: center;
+  overflow: hidden;
 }
 
-.end{
+.section-end::before {
+  content: "";
   position: absolute;
-  bottom: 2%;
-  align-self: center;
-  justify-self: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
+
+.end-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
 }
-@@media screen and (max-width: 900px) {
-  * {
-    display: none;
+
+/* HEADINGS & TEXT => Poppins */
+.end-heading {
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+.end-heading .end-h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.end-heading .end-p {
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #dddddd;
+  margin-top: 1rem;
+}
+
+.img {
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+  border-radius: 0 20px 0 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.img img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.img img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .end-heading .end-h1 {
+    font-size: 1.75rem;
   }
+  .end-heading .end-p {
+    font-size: 1rem;
+  }
+  .img {
+    border-radius: 0;
+  }
+}
+
+/* ------------------------------------ */
+/*  FOOTER                              */
+/* ------------------------------------ */
+.footer {
+  width: 100%;
+  height: 100vh; /* If you really want the footer to take the full height */
+  position: absolute;
+  bottom: 0;
+  z-index: 10000;
+  background-color: rgb(11, 11, 23); /* Or any color you prefer */
+}
+
+.p-col {
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
 }
